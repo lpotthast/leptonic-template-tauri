@@ -8,9 +8,12 @@ This template should help get you started developing with Tauri and Leptos.
 
 ## Development
 
+Make sure to install the tauri-cli in version 2!
+
+    cargo install tauri-cli@2.0.0-beta.8
+
 Make sure you have installed the prerequisites for your OS: <https://tauri.app/v1/guides/getting-started/prerequisites>, then run:
 
-    cd leptonic-template-tauri
     cargo tauri android init
     cargo tauri ios init
 
