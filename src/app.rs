@@ -1,5 +1,6 @@
 use leptonic::prelude::*;
 use leptos::*;
+use leptos_meta::{Meta, Title};
 use serde::{Deserialize, Serialize};
 use serde_wasm_bindgen::to_value;
 use wasm_bindgen::prelude::*;
@@ -17,6 +18,8 @@ struct GreetArgs<'a> {
 
 #[component]
 pub fn App() -> impl IntoView {
+    tracing::info!("Welcome to Leptonic");
+
     let (name, set_name) = create_signal(String::new());
     let (greet_msg, set_greet_msg) = create_signal(String::new());
 
@@ -37,6 +40,13 @@ pub fn App() -> impl IntoView {
     let (count, set_count) = create_signal(0);
 
     view! {
+        <Meta name="charset" content="UTF-8"/>
+        <Meta name="description" content="Leptonic Tauri template"/>
+        <Meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <Meta name="theme-color" content="#e66956"/>
+
+        <Title text="Leptonic Tauri template"/>
+
         <Root default_theme=LeptonicTheme::default()>
             <Box style="display: flex; flex-direction: column; align-items: center; padding: 1em; min-height: 100%; min-width: 100%">
                 <H2>"Welcome to Leptonic"</H2>

@@ -12,6 +12,10 @@ Make sure to install the tauri-cli in version 2!
 
     cargo install tauri-cli@2.0.0-beta.8
 
+Make sure that `trunk` is installed:
+
+    cargo install trunk
+
 Make sure you have installed the prerequisites for your OS: <https://tauri.app/v1/guides/getting-started/prerequisites>, then run:
 
     cargo tauri android init
