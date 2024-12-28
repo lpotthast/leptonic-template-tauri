@@ -1,5 +1,5 @@
 use leptonic::prelude::*;
-use leptos::*;
+use leptos::prelude::*;
 use leptos_meta::{Meta, Title};
 use serde::{Deserialize, Serialize};
 use serde_wasm_bindgen::to_value;
@@ -20,8 +20,8 @@ struct GreetArgs<'a> {
 pub fn App() -> impl IntoView {
     tracing::info!("Welcome to Leptonic");
 
-    let (name, set_name) = create_signal(String::new());
-    let (greet_msg, set_greet_msg) = create_signal(String::new());
+    let (name, set_name) = signal(String::new());
+    let (greet_msg, set_greet_msg) = signal(String::new());
 
     let greet = move || {
         spawn_local(async move {
@@ -37,7 +37,7 @@ pub fn App() -> impl IntoView {
         });
     };
 
-    let (count, set_count) = create_signal(0);
+    let (count, set_count) = signal(0);
 
     view! {
         <Meta name="charset" content="UTF-8"/>
