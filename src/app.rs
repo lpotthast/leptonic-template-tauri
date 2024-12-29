@@ -49,7 +49,7 @@ pub fn App() -> impl IntoView {
 
         <Root default_theme=LeptonicTheme::default()>
             <Box style="display: flex; flex-direction: column; align-items: center; padding: 1em; min-height: 100%; min-width: 100%">
-                <H2>"Welcome to Leptonic"</H2>
+                <h2>"Welcome to Leptonic"</h2>
 
                 <Stack spacing=Size::Em(2.0)>
                     <div style="width: 100%;">
