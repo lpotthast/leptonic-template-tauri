@@ -1,12 +1,12 @@
 # Rust
-/target
-/Cargo.lock
+target
+Cargo.lock
 
 #Trunk
-/dist
+dist
 
 # IDE's
-/.idea
+.idea
 
 # OS
 .DS_Store
