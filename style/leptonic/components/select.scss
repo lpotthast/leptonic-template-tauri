@@ -9,27 +9,27 @@
 
     &:focus,
     &:active {
-        leptonic-select {
-            leptonic-select-selected {
+        .leptonic-select {
+            .leptonic-select-selected {
                 border-color: var(--select-focused-border-color);
             }
         }
     }
 
-    leptonic-select.active {
-        leptonic-select-selected {
+    .leptonic-select.active {
+        .leptonic-select-selected {
             border-color: var(--select-focused-border-color);
         }
     }
 }
 
-leptonic-select {
+.leptonic-select {
     display: block;
     position: relative;
     border: none;
     cursor: pointer;
 
-    leptonic-select-selected {
+    .leptonic-select-selected {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -47,10 +47,9 @@ leptonic-select {
         background: var(--select-selected-background-color);
 
         border: var(--select-selected-border);
-        border-bottom: var(--select-selected-border-bottom);
         border-radius: var(--select-selected-border-radius);
 
-        leptonic-select-deselect-trigger {
+        .leptonic-select-deselect-trigger {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -66,7 +65,7 @@ leptonic-select {
             }
         }
 
-        leptonic-select-show-trigger {
+        .leptonic-select-show-trigger {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -84,9 +83,9 @@ leptonic-select {
     }
 
     &[data-variant="multiselect"] {
-        leptonic-select-selected {
-            leptonic-select-option {
-                leptonic-chip {
+        .leptonic-select-selected {
+            .leptonic-select-option {
+                .leptonic-chip {
                     margin: 0.1em 0.4em 0.1em 0;
                     border-radius: 0.8em;
                 }
@@ -94,7 +93,7 @@ leptonic-select {
         }
     }
 
-    leptonic-select-options {
+    .leptonic-select-options {
         display: none;
         position: absolute;
         top: 100%;
@@ -116,7 +115,7 @@ leptonic-select {
             display: flex;
         }
 
-        leptonic-input {
+        .leptonic-input {
             input.search {
                 margin: 0.3em;
                 border: 1px solid lightgray;
@@ -124,7 +123,7 @@ leptonic-select {
             }
         }
 
-        leptonic-select-option {
+        .leptonic-select-option {
             padding: 0.6em;
             user-select: none;
 
@@ -142,7 +141,7 @@ leptonic-select {
             }
         }
 
-        leptonic-select-no-search-results {
+        .leptonic-select-no-search-results {
             padding: 0.6em;
             user-select: none;
             cursor: default;

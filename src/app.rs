@@ -1,6 +1,8 @@
+use leptonic::components::prelude::*;
 use leptonic::prelude::*;
 use leptos::prelude::*;
-use leptos_meta::{Meta, Title};
+use leptos::task::spawn_local;
+use leptos_meta::{provide_meta_context, Meta, Title};
 use serde::{Deserialize, Serialize};
 use serde_wasm_bindgen::to_value;
 use wasm_bindgen::prelude::*;
@@ -18,6 +20,8 @@ struct GreetArgs<'a> {
 
 #[component]
 pub fn App() -> impl IntoView {
+    provide_meta_context();
+
     tracing::info!("Welcome to Leptonic");
 
     let (name, set_name) = signal(String::new());
@@ -31,7 +35,6 @@ pub fn App() -> impl IntoView {
             }
 
             let args = to_value(&GreetArgs { name: &name }).unwrap();
-            // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
             let new_msg = invoke("greet", args).await.as_string().unwrap();
             set_greet_msg.set(new_msg);
         });
@@ -48,26 +51,26 @@ pub fn App() -> impl IntoView {
         <Title text="Leptonic Tauri template"/>
 
         <Root default_theme=LeptonicTheme::default()>
-            <Box style="display: flex; flex-direction: column; align-items: center; padding: 1em; min-height: 100%; min-width: 100%">
+            <div style="display: flex; flex-direction: column; align-items: center; padding: 1em; min-height: 100%; min-width: 100%">
                 <h2>"Welcome to Leptonic"</h2>
 
                 <Stack spacing=Size::Em(2.0)>
                     <div style="width: 100%;">
                         <div style="margin-top: 3em;">"Count: " {move || count.get()}</div>
-                        <Button on_click=move|_| set_count.update(|c| *c += 1)>
+                        <Button on_press=move|_| set_count.update(|c| *c += 1)>
                             "Increase"
                         </Button>
                     </div>
 
                     <div style="width: 100%;">
-                        <TextInput get=name set=set_name placeholder="Enter a name..."/>
-                        <Button on_click=move|_| greet()>
+                        <TextInput get=name set=set_name placeholder=Oco::Borrowed("Enter a name...")/>
+                        <Button on_press=move|_| greet()>
                             "Greet"
                         </Button>
                         <p><b>{ move || greet_msg.get() }</b></p>
                     </div>
                 </Stack>
-            </Box>
+            </div>
         </Root>
     }
 }
