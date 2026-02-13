@@ -1,7 +1,5 @@
-use leptonic::components::prelude::*;
-use leptonic::prelude::*;
-use leptos::prelude::*;
-use leptos::task::spawn_local;
+use leptonic::{components::prelude::*, prelude::*};
+use leptos::{prelude::*, task::spawn_local};
 use leptos_meta::{provide_meta_context, Meta, Title};
 use serde::{Deserialize, Serialize};
 use serde_wasm_bindgen::to_value;
