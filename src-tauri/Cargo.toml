@@ -2,8 +2,7 @@
 name = "leptonic-template-tauri"
 version = "0.0.0"
 description = "A Tauri App"
-authors = ["you"]
-edition = "2021"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
