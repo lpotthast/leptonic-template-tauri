@@ -5,8 +5,6 @@ target = "./index.html"
 ignore = [
     "./src-tauri",
     # The Leptonic build writes these files. Not ignoring them could lead to infinite rebuilds when using `trunk serve`.
-    "./public/js",
-    # The Leptonic build writes these files. Not ignoring them could lead to infinite rebuilds when using `trunk serve`.
     "./style/leptonic"
 ]
 

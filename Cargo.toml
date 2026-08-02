@@ -7,9 +7,6 @@ edition = "2024"
 # REQUIRED: Leptonic's build-script will copy the Leptonic themes to this directory.
 style-dir = "style"
 
-# REQUIRED: Leptonic's build-script will copy static JS dependencies to this directory.
-js-dir = "public/js"
-
 [workspace]
 members = ["src-tauri"]
 

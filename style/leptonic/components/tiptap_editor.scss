@@ -1,8 +1,8 @@
-.leptonic-tiptap-editor {
+leptonic-tiptap-editor {
     display: flex;
     flex-direction: column;
 
-    .leptonic-tiptap-menu {
+    leptonic-tiptap-menu {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -34,7 +34,7 @@
         }
     }
 
-    leptos-tiptap-instance {
+    .leptos-tiptap-instance {
 
         // Reset
         .ProseMirror:focus {
@@ -55,7 +55,7 @@
             cursor: grab;
         }
 
-        &[aria-disabled] {
+        &[aria-disabled="true"] {
             cursor: not-allowed;
             color: var(--tiptap-editor-instance-disabled-color);
         }
