@@ -13,7 +13,7 @@ members = ["src-tauri"]
 [dependencies]
 console_error_panic_hook = "0.1.7"
 js-sys = "0.3.85"
-leptonic = { git = "https://github.com/lpotthast/leptonic", branch = "hooks", features = ["full"] }
+leptonic = { git = "https://github.com/lpotthast/leptonic", branch = "hooks", features = ["atoms"] }
 leptos = { version = "0.8.15", features = ["csr"] }
 leptos_meta = { version = "0.8.5" }
 serde = { version = "1.0.228", features = ["derive"] }

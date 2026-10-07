@@ -1,4 +1,4 @@
-use leptonic::{components::prelude::*, prelude::*};
+use leptonic::atoms::prelude::*;
 use leptos::{prelude::*, task::spawn_local};
 use leptos_meta::{provide_meta_context, Meta, Title};
 use serde::{Deserialize, Serialize};
@@ -48,27 +48,24 @@ pub fn App() -> impl IntoView {
 
         <Title text="Leptonic Tauri template"/>
 
-        <Root default_theme=LeptonicTheme::default()>
-            <div style="display: flex; flex-direction: column; align-items: center; padding: 1em; min-height: 100%; min-width: 100%">
+        <ThemeProvider default_theme=LeptonicTheme::default()>
+            <main class="welcome">
                 <h2>"Welcome to Leptonic"</h2>
 
-                <Stack spacing=Size::Em(2.0)>
-                    <div style="width: 100%;">
-                        <div style="margin-top: 3em;">"Count: " {move || count.get()}</div>
-                        <Button on_press=move|_| set_count.update(|c| *c += 1)>
-                            "Increase"
-                        </Button>
-                    </div>
+                <span>"Count: " {move || count.get()}</span>
+                <Button on_press=move |_| set_count.update(|c| *c += 1)>
+                    "Increase"
+                </Button>
 
-                    <div style="width: 100%;">
-                        <TextInput get=name set=set_name placeholder=Oco::Borrowed("Enter a name...")/>
-                        <Button on_press=move|_| greet()>
-                            "Greet"
-                        </Button>
-                        <p><b>{ move || greet_msg.get() }</b></p>
-                    </div>
-                </Stack>
-            </div>
-        </Root>
+                <TextField value=name set_value=set_name placeholder="Enter a name...">
+                    <Label>"Name"</Label>
+                    <Input />
+                </TextField>
+                <Button on_press=move |_| greet()>
+                    "Greet"
+                </Button>
+                <p><b>{move || greet_msg.get()}</b></p>
+            </main>
+        </ThemeProvider>
     }
 }
