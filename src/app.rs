@@ -1,6 +1,6 @@
 use leptonic::atoms::prelude::*;
 use leptos::{prelude::*, task::spawn_local};
-use leptos_meta::{provide_meta_context, Meta, Title};
+use leptos_meta::{Meta, Title, provide_meta_context};
 use serde::{Deserialize, Serialize};
 use serde_wasm_bindgen::to_value;
 use wasm_bindgen::prelude::*;
