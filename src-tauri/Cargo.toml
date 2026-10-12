@@ -19,3 +19,5 @@ tauri-plugin-shell = "2.3.5"
 [build-dependencies]
 tauri-build = { version = "2.5.5", features = [] }
 
+[lints]
+workspace = true
